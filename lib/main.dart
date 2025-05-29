@@ -34,7 +34,58 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Column(children: [const TopAppBar()]));
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const TopAppBar(),
+        
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: InkWell(
+                child: Ink(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Text(
+                              'Conta',
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              ),
+        
+                              textAlign: TextAlign.start,
+                            ),
+                          ),
+        
+                          Text(
+                            'R\$ ${balance.toStringAsFixed(2)}',
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                            ),
+        
+                            textAlign: TextAlign.start,
+                          ),
+                        ],
+                      ),
+        
+                      Icon(Icons.keyboard_arrow_right),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -55,15 +106,12 @@ class TopAppBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: FloatingActionButton(
-                      onPressed: () {},
-                      shape: CircleBorder(),
-                      child: Icon(
-                        Icons.person,
-                        color: Theme.of(context).primaryColorLight,
-                      ),
+                  FloatingActionButton(
+                    onPressed: () {},
+                    shape: CircleBorder(),
+                    child: Icon(
+                      Icons.person,
+                      color: Theme.of(context).primaryColorLight,
                     ),
                   ),
 
