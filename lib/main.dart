@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// Placeholder for the user's name
+const String username = 'Gustavo';
+
+/// Placeholder for the user's account balance
+const double balance = 350.12;
+
 void main() {
   runApp(const MyApp());
 }
@@ -76,6 +82,20 @@ class TopAppBar extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+
+            /// Shows the user's name
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  child: const Text(
+                    'Olá, $username',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
